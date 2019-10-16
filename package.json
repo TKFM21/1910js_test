@@ -1,0 +1,29 @@
+{
+  "name": "js_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TKFM21/1910js_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TKFM21/1910js_test/issues"
+  },
+  "homepage": "https://github.com/TKFM21/1910js_test#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.1",
+    "nodemon": "^1.19.4",
+    "power-assert": "^1.6.1"
+  }
+}
