@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "start": "nodemon app.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -18,12 +18,14 @@
   },
   "homepage": "https://github.com/TKFM21/1910js_test#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1"
   },
   "devDependencies": {
     "mocha": "^6.2.1",
     "nodemon": "^1.19.4",
-    "power-assert": "^1.6.1"
+    "power-assert": "^1.6.1",
+    "supertest": "^4.0.2"
   }
 }

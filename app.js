@@ -1,13 +1,13 @@
 const express = require('express');
 const todoRouter = require('./src/router/todo');
+const bodyParser = require('body-parser');
 
-const PORT = 3001;
 const app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use('/api/todos', todoRouter);
 
-app.listen(PORT, () => {
-    console.log(`Server Listening on PORT:${PORT}`);
-});
+module.exports = app;
