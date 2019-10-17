@@ -1,6 +1,6 @@
 const todos = [];
 
-let nextId = 0;
+let nextId = 1;
 
 class Todo{
     constructor({title, body}) {
@@ -40,6 +40,27 @@ module.exports = {
         });
         todos.push(todo);
 
+        return todo;
+    },
+    update: ({id, title, body}) => {
+        if(typeof id !== 'number' || id < 1) {
+            throw new Error('idは必須です。（1以上の数値）');
+        }
+        if(!title) {
+            throw new Error('titleは必須です。');
+        }
+        if(!body) {
+            throw new Error('bodyは必須です。');
+        }
+
+        const todo = todos.find(todo => id === todo.id);
+        if(!todo) {
+            throw new Error('idに該当するtodoが存在しません。');
+        }
+
+        todo.title = title;
+        todo.body = body;
+        todo.updatedAt = new Date();
         return todo;
     }
 };
