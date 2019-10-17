@@ -62,5 +62,17 @@ module.exports = {
         todo.body = body;
         todo.updatedAt = new Date();
         return todo;
+    },
+    remove: (id) => {
+        if (typeof id !== 'number' || id < 1) {
+            throw new Error('idは必須です。（1以上の数値）');
+        }
+
+        const removeIndex = todos.findIndex(todo => todo.id === id);
+        if (removeIndex === -1) {
+            throw new Error('該当するidはありません。');
+        }
+        const removeTodo = todos.splice(removeIndex, 1)[0];
+        return removeTodo;
     }
 };
